@@ -8,11 +8,23 @@ namespace Alarm_ClockApp
 {
     internal sealed class AlarmClock
     {
-        public EventHandler countdownEvent;
+        public event EventHandler eventHandler;
 
-        public void SignUpEventHandler(AlarmClock alarmClock)
+        
+        private static AlarmClock? timer;
+
+        public static AlarmClock? Timer
         {
-            alarmClock.countdownEvent
+            get { return timer; }
+            set =>
+                timer = value;
         }
+
     }
+
+
 }
+
+
+    
+
